@@ -1,5 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
+import { QUERIES } from "../../constants";
 
 const OpinionStory = ({ id, title, author, avatar }) => {
   return (
@@ -17,6 +18,7 @@ const OpinionStory = ({ id, title, author, avatar }) => {
 
 const Wrapper = styled.article`
   color: var(--color-gray-900);
+  container-type: inline-size;
 `;
 
 const Avatar = styled.img`
@@ -25,6 +27,11 @@ const Avatar = styled.img`
   height: 48px;
   border-radius: 50%;
   object-fit: cover;
+
+  @container (width > ${256 / 16}rem) {
+    float: right;
+    margin-left: 16px;
+  }
 `;
 
 const AuthorName = styled.p`
